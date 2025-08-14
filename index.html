@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker PWA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+        <button id="loginBtn">Sign in with Google</button>
+    </header>
+
+    <main>
+        <section id="summary">
+            <div class="card">Total In: <span id="totalIn">0</span></div>
+            <div class="card">Total Out: <span id="totalOut">0</span></div>
+            <div class="card">Balance: <span id="balance">0</span></div>
+        </section>
+
+        <section id="chartSection">
+            <canvas id="categoryChart"></canvas>
+        </section>
+
+        <section id="filters">
+            <button data-range="today">Today</button>
+            <button data-range="yesterday">Yesterday</button>
+            <button data-range="lastWeek">Last Week</button>
+            <button data-range="lastMonth">Last Month</button>
+            <button data-range="custom">Custom</button>
+        </section>
+
+        <section id="transactions">
+            <h2>Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Payment Method</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionList"></tbody>
+            </table>
+        </section>
+
+        <section id="actions">
+            <button id="addTransactionBtn">Add Transaction</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
